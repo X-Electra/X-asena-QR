@@ -17,7 +17,7 @@ const PastebinAPI = require("pastebin-js"),
 app.use("/", (req, res) => {
   const authfile = `./tmp/${makeid()}.json`;
   const { state } = useSingleFileAuthState(authfile, pino({ level: "silent" }));
-  function Xasena() {
+  function aparna() {
     try {
       let session = makeWASocket({
         auth: state,
@@ -46,30 +46,30 @@ app.use("/", (req, res) => {
           let code = btoa(data);
           var words = code.split("");
           var ress = words[Math.floor(words.length / 2)];
-          let c = code.split(ress).join(ress + "_XASENA_");
+          let c = code.split(ress).join(ress + "_APARNA_");
 
           const templateButtons = [
             {
               index: 1,
               urlButton: {
-                displayText: "Copy Code",
+                displayText: "𝐂𝐨𝐩𝐲 𝐬𝐞𝐬𝐬𝐢𝐨𝐧",
                 url: `https://www.whatsapp.com/otp/copy/${c}`,
               },
             },
             {
               index: 2,
               urlButton: {
-                displayText: "Github",
+                displayText: "𝐆𝐢𝐭𝐡𝐮𝐛",
                 url: `github.com/Neeraj-x0/Millie-MD`,
               },
             },
           ];
 
           const templateMessage = {
-            text: `\nᴅᴇᴀʀ ᴜsᴇʀ ᴛʜɪs ɪs ʏᴏᴜʀ sᴇssɪᴏɴ ɪᴅ
+            text: `\n𝐀𝐩𝐚𝐫𝐧𝐚 𝐌𝐰𝐨𝐥 𝐌𝐝
           
-◕ ⚠️ *ᴘʟᴇᴀsᴇ ᴅᴏ ɴᴏᴛ sʜᴀʀᴇ ᴛʜɪs ᴄᴏᴅᴇ ᴡɪᴛʜ ᴀɴʏᴏɴᴇ ᴀs ɪᴛ ᴄᴏɴᴛᴀɪɴs ʀᴇǫᴜɪʀᴇᴅ ᴅᴀᴛᴀ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ᴄᴏɴᴛᴀᴄᴛ ᴅᴇᴛᴀɪʟs ᴀɴᴅ ᴀᴄᴄᴇss ʏᴏᴜʀ ᴡʜᴀᴛsᴀᴘᴘ*`,
-            footer: "sᴇssɪᴏɴ",
+◕ ⚠️ *ᴩʟᴇᴀꜱᴇ ᴅᴏ ɴᴏᴛ ꜱʜᴀʀᴇ ᴛʜᴇ ᴄᴏᴅᴇ*`,
+            footer: "𝐀𝐩𝐚𝐫𝐧𝐚 𝐌𝐝 𝐪𝐫",
             templateButtons: templateButtons,
           };
 
@@ -80,6 +80,7 @@ app.use("/", (req, res) => {
             mimetype: "application/json",
           });
 
+
           await delay(3000 * 10);
           process.send("reset");
         }
@@ -89,7 +90,7 @@ app.use("/", (req, res) => {
           lastDisconnect.error &&
           lastDisconnect.error.output.statusCode != 401
         ) {
-          Xasena();
+          aparna();
         }
       });
     } catch (err) {
@@ -99,7 +100,7 @@ app.use("/", (req, res) => {
     }
   }
 
-  Xasena();
+  aparna();
 });
 app.listen(PORT, () => console.log("App listened on port", PORT));
 
